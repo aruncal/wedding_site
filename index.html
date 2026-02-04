@@ -3,23 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arun & Lakshmi | The Wedding</title>
+    <title>Arun Weds Lakshmi | A Chettinadu Wedding</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            /* Updated Palette applied consistently */
-            --wedding-red: #D32F2F;
-            --wedding-orange: #F57C00;
-            --wedding-blue: #1A237E;
+            /* Strictly Gold and Dark Palette */
             --wedding-gold: #FFC107;
-            --wedding-gold-dark: #a07820;
-            --wedding-cream: #FFFDE7;      /* The main background color mimicking the paper */
-            --text-dark: #3E2723;
-            --invitation-text: #1c0d02;    /* The main dark text color */
-            --card-shadow: 0 15px 35px rgba(160, 120, 32, 0.15); /* Warm shadow */
+            --wedding-gold-dark: #b8860b; 
+            --wedding-cream: #FFFDE7;      
+            --text-dark: #1c0d02; /* Deep Black/Brown */
+            --invitation-text: #1c0d02;    
+            --card-shadow: 0 15px 35px rgba(160, 120, 32, 0.15); 
+            
+            /* Keeping these for the buttons/tags context only, but not main text */
+            --wedding-blue: #1A237E; 
+            --wedding-orange: #F57C00;
         }
 
         * {
@@ -30,7 +31,6 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            /* Changed to solid cream to match invitation paper texture implicitly */
             background-color: var(--wedding-cream);
             color: var(--invitation-text);
             overflow-x: hidden;
@@ -43,7 +43,6 @@
 
         .script-font {
             font-family: 'Great Vibes', cursive;
-            color: var(--wedding-gold);
             font-weight: 400;
         }
 
@@ -56,10 +55,9 @@
             min-height: 100vh; 
             display: flex;
             flex-direction: column;
-            padding: 18% 10% 5% 10%;
-            /* Gold border to separate top from bottom */
+            justify-content: center; 
+            padding: 10% 5% 5% 5%;
             border-bottom: 4px solid var(--wedding-gold);
-            color: var(--invitation-text);
             text-align: center;
         }
         
@@ -67,38 +65,69 @@
             margin-bottom: 40px;
         }
 
+        /* Top Romantic Line - Gold */
+        .romantic-intro {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: var(--wedding-gold-dark); 
+            text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Middle connecting line - Black */
+        .invite-standard {
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        /* Names - Black/Dark */
         header h1 {
-            font-size: 4rem;
-            color: var(--invitation-text);
-            margin: 20px 0 5px 0;
-            line-height: 1.2;
+            font-size: 4.5rem;
+            color: var(--text-dark);
+            margin: 10px 0;
+            line-height: 1.1;
             font-weight: 700;
         }
 
-        .header-subtitle {
+        /* Bottom Quote - Dark */
+        .quote-text {
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
-        
-        .invitation-body-text {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            line-height: 1.5;
+            margin: 20px auto 30px auto;
+            max-width: 700px;
+            font-style: italic;
+            color: var(--text-dark);
         }
 
         .date-location {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-top: 20px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-top: 20px;
+    color: var(--wedding-gold-dark);
+    
+    /* ADD THESE LINES TO FIX THE NUMBER 5 */
+    font-variant-numeric: lining-nums;
+    font-feature-settings: "lnum";
+}
+        
+        .location-sub {
+             font-size: 1.3rem; 
+             font-weight: 400; 
+             color: var(--text-dark);
+             margin-top: 5px;
+             display: block;
         }
 
         /* --- Countdown Section --- */
         .countdown-section {
             text-align: center;
-            margin-top: auto; /* Push to bottom of wrapper */
+            margin-top: 40px;
             padding-bottom: 30px;
         }
 
@@ -106,7 +135,7 @@
             font-family: 'Great Vibes', cursive;
             font-size: 2.5rem;
             margin-bottom: 20px;
-            color: var(--invitation-text);
+            color: var(--text-dark);
         }
 
         .timer {
@@ -119,11 +148,12 @@
         .time-unit {
             text-align: center;
             min-width: 80px;
-            /* Semi-transparent cream to blend but remain readable */
-            background: rgba(255, 253, 231, 0.8);
+            /* Semi-transparent cream background for readability */
+            background: rgba(255, 253, 231, 0.9);
             padding: 15px;
             border-radius: 15px;
             border: 2px solid var(--wedding-gold);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
         .time-unit span {
@@ -131,15 +161,15 @@
             font-size: 3rem;
             font-family: 'Cormorant Garamond', serif;
             font-weight: 700;
-            color: var(--wedding-gold-dark); 
+            color: var(--wedding-gold-dark); /* Changed to Gold */
             line-height: 1;
         }
 
         .time-label {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: var(--invitation-text);
+            color: var(--text-dark);
             margin-top: 8px;
             font-weight: 600;
         }
@@ -150,7 +180,6 @@
         .selector-section {
             padding: 60px 20px;
             text-align: center;
-            /* Match body cream color */
             background: var(--wedding-cream);
             position: relative;
             z-index: 10;
@@ -161,7 +190,6 @@
         }
 
         .selector-section h2 {
-            /* Use invitation text color instead of red */
             color: var(--invitation-text);
         }
 
@@ -170,7 +198,6 @@
             justify-content: center;
             margin: 40px 0;
             gap: 0;
-            /* Changed border to gold to match theme */
             border: 3px solid var(--wedding-gold);
             border-radius: 50px;
             overflow: hidden;
@@ -178,7 +205,6 @@
         }
 
         .toggle-btn {
-            /* Cream background, dark text */
             background: var(--wedding-cream);
             color: var(--invitation-text);
             border: none;
@@ -193,7 +219,6 @@
         }
 
         .toggle-btn.active {
-            /* Gold background for active state */
             background: var(--wedding-gold);
             color: var(--invitation-text);
         }
@@ -216,7 +241,6 @@
         }
 
         .event-block {
-            /* Keep white for pop, or change to var(--wedding-cream) for subtle look. White feels cleaner here. */
             background: white; 
             margin-bottom: 50px;
             border-radius: 25px;
@@ -246,7 +270,6 @@
             content: '';
             position: absolute;
             top: 0; right: 0; bottom: 0; width: 5px;
-            /* Standard gold gradient separator */
             background: linear-gradient(to bottom, var(--wedding-gold), var(--wedding-gold-dark));
         }
 
@@ -258,7 +281,6 @@
             justify-content: center;
         }
 
-        /* Default tag style (Morning events) - Gold/Cream theme */
         .event-tag {
             color: var(--wedding-gold-dark);
             background: rgba(255, 193, 7, 0.15);
@@ -276,7 +298,6 @@
 
         .event-details h3 {
             font-size: 2.8rem;
-            /* Use solid dark text or subtle gold gradient */
             color: var(--invitation-text);
             margin-bottom: 20px;
             line-height: 1.1;
@@ -297,7 +318,6 @@
             font-size: 1.15rem;
         }
 
-        /* Default icon color */
         .info-icon {
             font-size: 1.5rem;
             color: var(--wedding-gold-dark);
@@ -308,7 +328,6 @@
             margin-top: 25px;
             border-radius: 15px;
             overflow: hidden;
-            /* Consistent gold border */
             border: 2px solid var(--wedding-gold);
             height: 300px;
         }
@@ -320,9 +339,9 @@
             display: block;
         }
 
-        /* Footer - CHANGED TO DARK BLUE */
+        /* Footer */
         footer {
-            background: var(--wedding-blue); /* Updated from --invitation-text */
+            background: var(--wedding-blue); 
             color: var(--wedding-gold);
             text-align: center;
             padding: 60px 20px;
@@ -334,13 +353,6 @@
         @media (max-width: 900px) {
             .top-section-wrapper { padding: 25% 5% 10% 5%; min-height: auto; }
             header h1 { font-size: 3rem; }
-            .header-subtitle { font-size: 1.2rem; }
-            .invitation-body-text { font-size: 1rem; }
-            .date-location { font-size: 1.2rem; }
-            .timer-title { font-size: 2rem; }
-            .timer { gap: 15px; }
-            .time-unit { min-width: 70px; padding: 10px; }
-            .time-unit span { font-size: 2.2rem; }
             .event-block { flex-direction: column; }
             .event-image { width: 100%; height: 250px; }
             .event-image::after { width: 100%; height: 5px; bottom: 0; top: auto; right: 0; left: 0; background: linear-gradient(to right, var(--wedding-gold), var(--wedding-gold-dark));}
@@ -358,14 +370,20 @@
 
     <div class="top-section-wrapper">
         <header>
-            <div class="script-font" style="font-size: 3.5rem; color: var(--invitation-text);">Wedding Invitation</div>
-           
+            <div class="romantic-intro">The Beginning of Forever</div>
             
-            <h1>Arunkaleeshwaran <span style="font-size: 3rem; vertical-align: middle;"><br>&</br></span> Lakshmi</h1>
-            <div class="date-location">
-                Sunday 15th March, 2026<br>
-                Devakottai, Tamil Nadu, India
+            <div class="quote-text">We Invite You To Celebrate The union of</div>
+           
+            <h1>Lakshmi<span style="font-size: 3rem; vertical-align: middle; color: var(--wedding-gold-dark);"><br>&</br></span> Arunkaleeshwaran</h1>
+            
+            <div class="quote-text">
+                Join us with your family,<br> as we begin the journey of a lifetime.
             </div>
+
+            <div class="date-location">
+    Sunday 15<sup>th</sup> March, 2026
+    <span class="location-sub">Devakottai, Tamil Nadu, India</span>
+</div>
         </header>
     
         <div class="countdown-section">
@@ -382,7 +400,7 @@
     <div class="selector-section">
         <h2 style="font-size: 3rem; margin-bottom: 10px;">Choose Your Party</h2>
         <p style="color: var(--text-dark); font-size: 1.1rem;">Select a side to view your specific venues and timeline</p>
-        
+        <br>
         <div class="toggle-container">
             <button id="btn-groom" class="toggle-btn active" onclick="showTeam('groom')">Team Groom</button>
             <button id="btn-bride" class="toggle-btn" onclick="showTeam('bride')">Team Bride</button>
@@ -390,10 +408,28 @@
     </div>
 
     <div id="groom-content" class="events-container show-content">
+        
+        <div class="event-block">
+            <div class="event-image" style="background-image: url('https://i.pinimg.com/736x/c3/5c/41/c35c41855206e221729fb5b72a649111.jpg'); filter: sepia(0.3);"></div>
+            <div class="event-details">
+                <div class="event-tag" style="border-color: var(--wedding-orange); color: var(--wedding-orange); background: rgba(245, 124, 0, 0.1);">14th Evening • 5:00 PM</div>
+                <h3>Pre-wedding ceremony & Thali korthal</h3>
+                <p style="margin-bottom: 20px;">A heartfelt moment when elders lovingly prepare the sacred thaali (kaluthuru) by stringing it onto a yellow thread, symbolizing blessings and continuity of tradition.</p>
+                <div class="info-row">
+                    <span class="info-icon">📍</span>
+                    <div><strong>Zamindaar House</strong><br>Devakottai (Groom's Venue)</div>
+                </div>
+                
+                <div class="map-wrapper">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15719.475379784704!2d78.79528105300922!3d9.944868916443312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b005be3dd43802d%3A0x6a574b4c1b122276!2sDevakottai%20Zamindaar%20House!5e0!3m2!1sen!2sca!4v1769505213062!5m2!1sen!2sca" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+
         <div class="event-block">
             <div class="event-image" style="background-image: url('https://i.ibb.co/tpcKHQYf/groom-procession.png');"></div>
             <div class="event-details">
-                <div class="event-tag">The Morning • 7:00 AM</div>
+                <div class="event-tag">15th Morning • 7:00 AM</div>
                 <h3>Mapillai Azhaippu</h3>
                 <p style="margin-bottom: 20px;">Join us as we proceed in a traditional procession to the wedding hall with Nadaswaram.</p>
                 <div class="info-row">
@@ -410,9 +446,9 @@
         <div class="event-block">
             <div class="event-image" style="background-image: url('https://i.ibb.co/bG3gFZh/reception.png');"></div>
             <div class="event-details">
-                <div class="event-tag" style="background: rgba(26, 35, 126, 0.1); color: var(--wedding-blue); border-color: var(--wedding-blue);">The Evening • 6:30 PM</div>
+                <div class="event-tag" style="background: rgba(26, 35, 126, 0.1); color: var(--wedding-blue); border-color: var(--wedding-blue);">15th Evening • 6:30 PM</div>
                 <h3 style="color: var(--wedding-blue);">Pen Azhaippu & Reception</h3>
-                <p style="margin-bottom: 20px;">A grand evening of celebration and feast under the stars.</p>
+                <p style="margin-bottom: 20px;">This ceremony beautifully marks the bride’s transition into the groom’s family, as she graciously welcomes relatives and guests as part of her new family.</p>
                 <div class="info-row">
                     <span class="info-icon" style="color: var(--wedding-blue);">📍</span>
                     <div><strong>Zamindaar House</strong><br>Devakottai (Groom's Venue)</div>
@@ -426,12 +462,30 @@
     </div>
 
     <div id="bride-content" class="events-container">
+        
+        <div class="event-block">
+            <div class="event-image" style="background-image: url('https://i.ibb.co/0R5TWQCc/maru-seeru-image.png'); filter: sepia(0.3);"></div>
+            <div class="event-details">
+                <div class="event-tag" style="border-color: var(--wedding-orange); color: var(--wedding-orange); background: rgba(245, 124, 0, 0.1);">14th Evening • 5:00 PM</div>
+                <h3>Maru Seeru</h3>
+                <p style="margin-bottom: 20px;">Feel the warmth as the bride’s family visits the groom’s family with gifts, sweets, and a ceremonial exchange that renews alliances, symbolizing harmony and fresh beginnings.</p>
+                <div class="info-row">
+                    <span class="info-icon">📍</span>
+                    <div><strong>Kannamai Meenakshisundaram Mandapam</strong><br>Devakottai (Bride's Venue)</div>
+                </div>
+                
+                <div class="map-wrapper">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.8587411089457!2d78.8138848543167!3d9.94570904182831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b005b6d1b7ddd7b%3A0xcefab4045dbd8675!2sKannamai%20Meenakshisundaram%20Mandapam!5e0!3m2!1sen!2sca!4v1769505090201!5m2!1sen!2sca" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+
         <div class="event-block">
             <div class="event-image" style="background-image: url('https://i.ibb.co/TDVPS2VC/muhurtam.png');"></div>
             <div class="event-details">
-                <div class="event-tag">The Morning • 7:45 AM</div>
-                <h3>Muhurtham</h3>
-                <p style="margin-bottom: 20px;">Welcoming the groom followed by the sacred thali ceremony.</p>
+                <div class="event-tag">15th Morning • 8:00 AM</div>
+                <h3>Thirupootuthal</h3>
+                <p style="margin-bottom: 20px;">The groom is warmly welcomed by the bride & family. The couple’s maternal uncles—adorned in vibrant pink mamakara pattu—serve as ceremonial hosts, as the groom is brought to the bride standing on the manai, where the Kaluthuru is lovingly tied around Lakshmi’s neck.</p>
                 <div class="info-row">
                     <span class="info-icon">📍</span>
                     <div><strong>Kannamai Meenakshisundaram Mandapam</strong><br>Devakottai (Bride's Venue)</div>
@@ -446,9 +500,9 @@
         <div class="event-block">
             <div class="event-image" style="background-image: url('https://i.ibb.co/bG3gFZh/reception.png');"></div>
             <div class="event-details">
-                 <div class="event-tag" style="background: rgba(26, 35, 126, 0.1); color: var(--wedding-blue); border-color: var(--wedding-blue);">The Evening • 7:00 PM</div>
+                 <div class="event-tag" style="background: rgba(26, 35, 126, 0.1); color: var(--wedding-blue); border-color: var(--wedding-blue);">15th Evening • 4:00 PM</div>
                 <h3 style="color: var(--wedding-blue);">Pen Azhaippu & Reception</h3>
-                <p style="margin-bottom: 20px;">Join us for an evening of celebration as the couple makes their first appearance.</p>
+                <p style="margin-bottom: 20px;">This ceremony beautifully marks the bride’s transition into the groom’s family, as she graciously welcomes relatives and guests as part of her new family.</p>
                 <div class="info-row">
                     <span class="info-icon" style="color: var(--wedding-blue);">📍</span>
                     <div><strong>Zamindaar House</strong><br>Devakottai (Groom's Venue)</div>
